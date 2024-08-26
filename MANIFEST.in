@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include config.json
+include requirements.txt
+include reddit_image_downloader/spinner.py
+include config.json
+recursive-include reddit_image_downloader *.py
+recursive-include tests *.py
+global-exclude *.pyc

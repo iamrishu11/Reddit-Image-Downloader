@@ -88,6 +88,7 @@ def download_images_from_post(post_url, output_zip, config):
         print(f"Fetched post: {submission.title}")
         print(f"Fetched Author: u/{submission.author.name}")
         print(f"Subreddit Name: r/{submission.subreddit.display_name}")
+        print(f"Post Content: \n{submission.selftext}")
 
         if not submission:
             print(f"Error: Submission with ID {post_id} not found.")
