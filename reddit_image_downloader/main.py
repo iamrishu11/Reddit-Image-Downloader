@@ -5,15 +5,14 @@ from zipfile import ZipFile
 from requests.exceptions import RequestException
 from praw.exceptions import APIException, ClientException
 import re
-import os
 from .spinner import Spinner
 from tqdm import tqdm
 import shutil
 
-def load_config(config_path):
-    """Load configuration from a specified JSON file."""
+def load_config():
+    """Load configuration from config.json."""
     try:
-        with open(config_path, 'r') as f:
+        with open('config.json', 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         print("Error: config.json file not found.")
@@ -156,18 +155,3 @@ def download_images_from_post(post_url, output_zip, config):
         print(f"Reddit API error: {e}")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
-
-def main():
-    # Get the directory of the current script
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    # Use base_dir to construct the path to config.json and output_zip
-    config_path = os.path.join(base_dir, '..', 'config.json')
-    output_zip = os.path.join(base_dir, '..', 'images.zip')
-    
-    config = load_config(config_path)
-    post_url = input("Enter Reddit post URL: ")
-    download_images_from_post(post_url, output_zip, config)
-
-if __name__ == '__main__':
-    main()
