@@ -47,15 +47,19 @@ Reddit-Image-Downloader/
 │
 ├── reddit_image_downloader/
 │   ├── __init__.py
+│   ├── cli.py
 │   ├── main.py
 │   └── spinner.py
 │   
 ├── tests/
-│   └── test_main.py
+│   ├── __init__.py
+│   └── package-test.py
+│   └── test_main.py 
 │
 ├── .gitignore
 ├── LICENSE
 ├── MANIFEST.in
+├── package.md
 ├── README.md
 ├── requirements.txt
 ├── images.zip             # Created at Runtime
@@ -69,13 +73,25 @@ You can use the package either as a command-line tool or import it into your Pyt
 
 ### Command line tool
 
-Run the following command to start downloading images from a Reddit post:
-
+To get help and see the available options:
 ```bash
-python -m reddit_image_downloader.main
+reddit_image_downloader --help 
 ```
 
-You will be prompted to enter the Reddit post URL. The images will be saved to images.zip.
+To check the version of the installed package
+```bash
+reddit_image_downloader --version
+```
+
+To run the tool interactively and be prompted for a Reddit post URL and output ZIP file name:
+```bash
+reddit_image_downloader --run
+```
+
+To download images from a Reddit post directly by providing the post URL and the name of the output ZIP file:
+```bash
+reddit_image_downloader "https://www.reddit.com/r/example/comments/example_post/" "my_images.zip"
+```
 
 ### Python API
 
@@ -102,7 +118,7 @@ download_images_from_post(post_url, output_zip, config)
 python -m unittest discover -s tests
 ```
 
-This will run all test cases defined in the tests directory.
+This will run all test cases defined in the 'tests' directory.
 
 ## Use cases
 

@@ -19,19 +19,13 @@ This command generates distribution files (.tar.gz and .whl files) in the dist/ 
 3. Install the Package Locally:
 
 ```bash
-pip install dist/reddit_image_downloader-0.1.0-py3-none-any.whl
+pip install .
 ```
 
 4. Test the Command-Line Tool:
 
 ```bash
-python -m reddit_image_downloader.main --help
-```
-
-OR
-
-```bash
-reddit_image_downloader.main --help
+reddit_image_downloader --help
 ```
 
 5. Run Your Tests: 
@@ -78,5 +72,5 @@ pip install reddit_image_downloader
 3. Test the command-line tool again:
 
 ```bash
-python -m reddit_image_downloader.main --help
+reddit_image_downloader --help
 ```
