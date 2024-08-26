@@ -73,22 +73,22 @@ You can use the package either as a command-line tool or import it into your Pyt
 
 ### Command line tool
 
-To get help and see the available options:
+- To get help and see the available options:
 ```bash
 reddit_image_downloader --help 
 ```
 
-To check the version of the installed package
+- To check the version of the installed package
 ```bash
 reddit_image_downloader --version
 ```
 
-To run the tool interactively and be prompted for a Reddit post URL and output ZIP file name:
+- To run the tool interactively and be prompted for a Reddit post URL and output ZIP file name:
 ```bash
 reddit_image_downloader --run
 ```
 
-To download images from a Reddit post directly by providing the post URL and the name of the output ZIP file:
+- To download images from a Reddit post directly by providing the post URL and the name of the output ZIP file:
 ```bash
 reddit_image_downloader "https://www.reddit.com/r/example/comments/example_post/" "my_images.zip"
 ```
