@@ -13,7 +13,7 @@ class TestPackage(unittest.TestCase):
     def test_command_line_tool(self):
         """Test the command-line tool."""
         result = subprocess.run(
-            [sys.executable, '-m', 'reddit_image_downloader.main', '--help'],
+            [sys.executable, '-m', 'reddit_image_downloader', '--help'],
             capture_output=True,
             text=True
         )
