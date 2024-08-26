@@ -5,14 +5,15 @@ from zipfile import ZipFile
 from requests.exceptions import RequestException
 from praw.exceptions import APIException, ClientException
 import re
-from spinner import Spinner
+import os
+from .spinner import Spinner
 from tqdm import tqdm
 import shutil
 
-def load_config():
-    """Load configuration from config.json."""
+def load_config(config_path):
+    """Load configuration from a specified JSON file."""
     try:
-        with open('../config.json', 'r') as f:
+        with open(config_path, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         print("Error: config.json file not found.")
@@ -44,7 +45,6 @@ def process_comment(comment, zipf):
             for image_url in image_urls:
                 try:
                     # Download and save each image
-                    # print(f"Downloading image from {image_url}")
                     response = requests.get(image_url)
                     response.raise_for_status()  # Check for HTTP errors
                     
@@ -149,15 +149,24 @@ def download_images_from_post(post_url, output_zip, config):
             spinner.stop()
         
         # Print final completion message
-        # print(f"\nbla")
+        print(f"\nImages have been downloaded and saved to {output_zip}.")
 
     except (APIException, ClientException) as e:
         print(f"Reddit API error: {e}")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-if __name__ == '__main__':
-    config = load_config()
+def main():
+    # Get the directory of the current script
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Use base_dir to construct the path to config.json and output_zip
+    config_path = os.path.join(base_dir, '..', 'config.json')
+    output_zip = os.path.join(base_dir, '..', 'images.zip')
+    
+    config = load_config(config_path)
     post_url = input("Enter Reddit post URL: ")
-    output_zip = 'images.zip'
     download_images_from_post(post_url, output_zip, config)
+
+if __name__ == '__main__':
+    main()
