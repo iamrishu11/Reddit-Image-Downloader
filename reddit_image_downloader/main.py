@@ -8,11 +8,15 @@ import re
 from .spinner import Spinner
 from tqdm import tqdm
 import shutil
+import pkg_resources
 
 def load_config():
-    """Load configuration from config.json."""
+    """Load configuration from config.json included in the package."""
     try:
-        with open('config.json', 'r') as f:
+        config_path = pkg_resources.resource_filename(
+            __name__, 'config.json'
+        )
+        with open(config_path, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         print("Error: config.json file not found.")
