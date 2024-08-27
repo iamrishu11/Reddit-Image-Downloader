@@ -40,7 +40,7 @@ If you need to use different credentials or override the default configuration, 
 ```
 Replace the placeholders with your Reddit API credentials.
 
-Note: Although this package includes default API credentials, it's a good practice to provide your own configuration file for personal use to avoid exposing the default credentials
+**Note:** Although this package includes default API credentials, it's a good practice to provide your own configuration file for personal use to avoid exposing the default credentials
 
 ## Project directory
 
