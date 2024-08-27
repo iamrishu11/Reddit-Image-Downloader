@@ -27,7 +27,9 @@ pip install reddit-image-downloader
 
 ## Configuration
 
-Create a config.json file in the project root directory with the following structure:
+The package comes with a pre-configured config.json file that is included in the distribution. This file contains default Reddit API credentials which are used when the package is executed. To use these default credentials, you don’t need to create a separate config.json.
+
+If you need to use different credentials or override the default configuration, you can create your own config.json in the same directory where the script is executed, with the following structure:Create a config.json file in the project root directory with the following structure:
 
 ```json
 {
@@ -37,6 +39,8 @@ Create a config.json file in the project root directory with the following struc
 }
 ```
 Replace the placeholders with your Reddit API credentials.
+
+Note: Although this package includes default API credentials, it's a good practice to provide your own configuration file for personal use to avoid exposing the default credentials
 
 ## Project directory
 
@@ -49,7 +53,8 @@ Reddit-Image-Downloader/
 │   ├── __init__.py
 │   ├── cli.py
 │   ├── main.py
-│   └── spinner.py
+│   ├── spinner.py
+│   └── config.json
 │   
 ├── tests/
 │   ├── __init__.py
@@ -63,8 +68,7 @@ Reddit-Image-Downloader/
 ├── README.md
 ├── requirements.txt
 ├── images.zip             # Created at Runtime
-├── setup.py
-└── config.json
+└── setup.py
 ```
 
 ## Usage
