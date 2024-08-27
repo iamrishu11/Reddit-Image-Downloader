@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name='reddit_image_downloader',
-    version='0.1.2', 
+    version='0.1.3', 
     description='A tool to download images from Reddit posts and comments and save them into a ZIP file.',
-    long_description=open('README.md').read(),
+    long_description=open('setup.md').read(),
     long_description_content_type='text/markdown',
     author='Rishank Jain',
     author_email='rishankj749@gmail.com',

@@ -83,6 +83,11 @@ reddit_image_downloader --help
 reddit_image_downloader --version
 ```
 
+- To check information about author and code
+```bash
+reddit_image_downloader --author
+```
+
 - To run the tool interactively and be prompted for a Reddit post URL and output ZIP file name:
 ```bash
 reddit_image_downloader --run

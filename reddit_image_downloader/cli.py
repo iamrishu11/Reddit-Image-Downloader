@@ -20,6 +20,18 @@ def run_interactively():
     # Download images from the specified Reddit post and save them to a ZIP file
     download_images_from_post(post_url, output_zip, config)
 
+def author():
+    """Print details about the author and their GitHub repository."""
+    from importlib.metadata import version
+    package_version = version('reddit-image-downloader')
+    love = '\u2764\ufe0f'  # Heart symbol
+
+    print(f"This package is made with {love}  by Rishank Jain.")
+    print("The package is available as open source for the community at the GitHub link:")
+    print("https://github.com/iamrishu11/Reddit-Image-Downloader")
+    print(f"Current working version of the package: {package_version}")
+
+
 def main():
     parser = argparse.ArgumentParser(description='Download images from Reddit posts and comments.')
     
@@ -34,6 +46,12 @@ def main():
         '--version',
         action='store_true',
         help='Show the version of the package.'
+    )
+
+    parser.add_argument(
+        '--author',
+        action='store_true',
+        help='Show information about Author and Code.'
     )
     
     parser.add_argument(
@@ -56,6 +74,8 @@ def main():
         print_version()
     elif args.run:
         run_interactively()
+    elif args.author:
+        author()
     elif args.post_url and args.output_zip:
         # Load configuration
         config = load_config()
