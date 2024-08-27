@@ -11,15 +11,7 @@ A Python package for downloading images from Reddit posts and comments. This too
 
 ## Installation
 
-To install the package, clone the repository and use pip to install the dependencies:
-
-```bash
-git clone https://github.com/iamrishu11/Reddit-Image-Downloader.git
-cd reddit-image-downloader
-pip install -r requirements.txt
-```
-
-Alternatively, you can install the package directly from PyPI:
+You can install the package directly from PyPI:
 
 ```bash
 pip install reddit-image-downloader
