@@ -113,14 +113,6 @@ config = {
 download_images_from_post(post_url, output_zip, config)
 ```
 
-## Testing
-
-```bash
-python -m unittest discover -s tests
-```
-
-This will run all test cases defined in the 'tests' directory.
-
 ## Use cases
 
 1. **Archiving Reddit Media:** If you are archiving images from a particular Reddit post or thread for research or personal collection, this script automates the process, saving time and effort.
