@@ -1,5 +1,6 @@
 # Reddit Image Downloader
 
+[![Downloads](https://img.shields.io/pypi/dm/reddit-image-downloader)](https://pypi.org/project/reddit-image-downloader/)
 A Python package for downloading images from Reddit posts and comments. This tool fetches images from a given Reddit post URL and stores them in a ZIP archive.
 
 ## Features
@@ -33,8 +34,7 @@ If you need to use different credentials or override the default configuration, 
 Replace the placeholders with your Reddit API credentials.
 
 <div style="border-left: 3px solid black; background-color: #f9f9f9; padding: 10px;">
-    <strong>Note:</strong> Although this package includes default API credentials,<br>
-    it's a good practice to provide your own configuration file for personal use to avoid exposing the default credentials.
+    <strong>Note:</strong> Although this package includes default API credentials,it's a good practice to provide your own configuration file for personal use to avoid exposing the default credentials.
 </div>
 
 
