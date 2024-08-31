@@ -1,6 +1,7 @@
 # Reddit Image Downloader
 
-[![Downloads](https://img.shields.io/pypi/dm/reddit-image-downloader)](https://pypi.org/project/reddit-image-downloader/)
+![Downloads](https://img.shields.io/pypi/dm/reddit-image-downloader)
+<br>
 A Python package for downloading images from Reddit posts and comments. This tool fetches images from a given Reddit post URL and stores them in a ZIP archive.
 
 ## Features
