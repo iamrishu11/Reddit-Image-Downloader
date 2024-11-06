@@ -120,6 +120,82 @@ config = {
 download_images_from_post(post_url, output_zip, config)
 ```
 
+## Flowchart 
+
++-----------------------------------+
+| Start                             |
++-----------------------------------+
+              |
+              v
++----------------------------+
+| Read Configuration (config.json) |
++----------------------------+
+              |
+              v
++------------------------------------+
+| Validate Reddit API Credentials   |  
++------------------------------------+
+              |
+     Credentials Valid?  ------------> No  -------------------> Exit (Invalid Credentials)
+              |
+              v
+          Yes
+              |
+              v
++--------------------------------------------+
+| Prompt User for Reddit Post URL           |
++--------------------------------------------+
+              |
+              v
++--------------------------------------------+
+| Validate Reddit Post URL                  |
++--------------------------------------------+
+              |
+     Valid URL? ------------> No  -------------> Exit (Invalid URL)
+              |
+              v
+          Yes
+              |
+              v
++-------------------------------------------+
+| Fetch Post and Comment Data from Reddit  |
++-------------------------------------------+
+              |
+              v
++------------------------------------------+
+| Check for Images in Post/Comments       |
++------------------------------------------+
+              |
+     Images Found? ---------> No ----------> Exit (No Images Found)
+              |
+              v
+          Yes
+              |
+              v
++------------------------------------------+
+| Download Images (from Post and Comments) |
++------------------------------------------+
+              |
+              v
++-------------------------------------------+
+| Save Images in ZIP File                  |
++-------------------------------------------+
+              |
+              v
++-------------------------------------------+
+| Display Progress (Using Spinner/Progress Bar) |
++-------------------------------------------+
+              |
+              v
++------------------------------------------+
+| Finish Process (Images Saved in ZIP)    |
++------------------------------------------+
+              |
+              v
++-----------------------------------+
+| End                               |
++-----------------------------------+
+
 ## Use cases
 
 1. **Archiving Reddit Media:** If you are archiving images from a particular Reddit post or thread for research or personal collection, this script automates the process, saving time and effort.
