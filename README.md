@@ -144,7 +144,7 @@ Features which will be added in the upcoming updates
 
 - create a way so that you can download imgaes from n no of post in any subreddit
 - update the cli for menu type system
-- add a way to get images from share button link
+- ~~add a way to get images from share button link~~ ✅ 
 
 ## Contributing
 
