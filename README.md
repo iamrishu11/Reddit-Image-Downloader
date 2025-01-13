@@ -1,21 +1,26 @@
 # Reddit Image Downloader
 
-![Downloads](https://img.shields.io/pypi/dm/reddit-image-downloader)
-[![Downloads](https://pepy.tech/badge/reddit-image-downloader)](https://pepy.tech/project/reddit-image-downloader)
-
-<br>
 A Python package for downloading images from Reddit posts and comments. This tool fetches images from a given Reddit post URL and stores them in a ZIP archive.
 
 ## Features
 
 - Downloads images from Reddit comments.
+- Supports for Shortened Reddit URLs.
 - Handles images from both top-level comments and nested replies.
 - Provides a progress spinner during the download process.
 - Configurable via a `config.json` file.
 
 ## Installation
 
-You can install the package directly from PyPI:
+To install the package, clone the repository and use pip to install the dependencies:
+
+```bash
+git clone https://github.com/iamrishu11/Reddit-Image-Downloader.git
+cd reddit-image-downloader
+pip install -r requirements.txt
+```
+
+Alternatively, you can install the package directly from PyPI:
 
 ```bash
 pip install reddit-image-downloader
@@ -36,10 +41,7 @@ If you need to use different credentials or override the default configuration, 
 ```
 Replace the placeholders with your Reddit API credentials.
 
-<div style="border-left: 3px solid black; background-color: #f9f9f9; padding: 10px;">
-    <strong>Note:</strong> Although this package includes default API credentials,it's a good practice to provide your own configuration file for personal use to avoid exposing the default credentials.
-</div>
-
+**Note:** Although this package includes default API credentials, it's a good practice to provide your own configuration file for personal use to avoid exposing the default credentials
 
 ## Project directory
 
@@ -120,6 +122,14 @@ config = {
 download_images_from_post(post_url, output_zip, config)
 ```
 
+## Testing
+
+```bash
+python -m unittest discover -s tests
+```
+
+This will run all test cases defined in the 'tests' directory.
+
 ## Use cases
 
 1. **Archiving Reddit Media:** If you are archiving images from a particular Reddit post or thread for research or personal collection, this script automates the process, saving time and effort.
@@ -134,7 +144,7 @@ Features which will be added in the upcoming updates
 
 - create a way so that you can download imgaes from n no of post in any subreddit
 - update the cli for menu type system
-- add a way to get images from share button link
+- ~~add a way to get images from share button link~~ ✅ 
 
 ## Contributing
 
