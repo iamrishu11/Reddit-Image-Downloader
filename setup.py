@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='reddit_image_downloader',
-    version='0.1.5', 
+    version='0.2.0', 
     description='A tool to download images from Reddit posts and comments and save them into a ZIP file.',
     long_description=open('setup.md').read(),
     long_description_content_type='text/markdown',
@@ -16,7 +16,7 @@ setup(
         'reddit_image_downloader': ['config.json'],
     },
     install_requires=[
-        'praw>=7.7.1',
+        'praw>=7.8.1',
         'requests>=2.28.2',
         'tqdm>=4.65.0',
         'setuptools'

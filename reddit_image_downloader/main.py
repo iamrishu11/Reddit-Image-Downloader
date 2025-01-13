@@ -27,11 +27,17 @@ def load_config():
 
 def extract_post_id(post_url):
     """Extract post ID from Reddit URL."""
-    match = re.search(r'/r/[^/]+/comments/([a-zA-Z0-9_]+)', post_url)
-    if match:
-        return match.group(1)
-    else:
-        print("Error: Unable to extract post ID from URL.")
+    try:
+        response = requests.get(post_url, allow_redirects=True)
+        resolved_url = response.url
+        match = re.search(r'/r/[^/]+/comments/([a-zA-Z0-9_]+)', resolved_url)
+        if match:
+            return match.group(1)
+        else:
+            print("Error: Unable to extract post ID from URL.")
+            return None
+    except RequestException as e:
+        print(f"Error resolving URL: {e}")
         return None
 
 def contains_images(comment):

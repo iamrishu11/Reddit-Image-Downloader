@@ -5,6 +5,7 @@ A Python package for downloading images from Reddit posts and comments. This too
 ## Features
 
 - Downloads images from Reddit comments.
+- Supports for Shortened Reddit URLs.
 - Handles images from both top-level comments and nested replies.
 - Provides a progress spinner during the download process.
 - Configurable via a `config.json` file.
